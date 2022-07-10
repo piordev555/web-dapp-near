@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Design System/Colors/Overview"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Colors
+
+We use all sorts of css utility classes to reflect our brand colors. For example, to set a background color, use `bg-{colorToken}`.
+
+## Usage
+
+Here is all colors that you could use.
+
+<Story id="design-system-colors--visual-guide" />
+
+<br />
+
+### Classes
+
+A list of all classes that can be used in combination with the colors listed above.
+
+| Class                    | Description                                                            |
+| ------------------------ | ---------------------------------------------------------------------- |
+| bg-{colorToken}          | Utility class for controlling an element's background color.           |
+| from-{colorToken}        | Utility class for controlling the color stops in background gradients. |
+| via-{colorToken}         | Utility class for controlling the color stops in background gradients. |
+| to-{colorToken}          | Utility class for controlling the color stops in background gradients. |
+| border-{colorToken}      | Utility class for controlling the color of an element's borders.       |
+| ring-{colorToken}        | Utility class for setting the color of outline rings.                  |
+| ring-offset-{colorToken} | Utility class for setting the color of outline ring offsets.           |
+| divide-{colorToken}      | Utility class for controlling the border color between elements.       |
+| text-{colorToken}        | Utility class for controlling the text color of an element.            |
+| placeholder-{colorToken} | Utility class for controlling the color of placeholder text.           |
+| caret-{colorToken}       | Utility class for controlling the color of the text input cursor.      |

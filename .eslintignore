@@ -1,0 +1,9 @@
+node_modules
+.next
+coverage
+
+*.config.js
+.eslintrc.js
+
+*.d.ts
+tsconfig.json

@@ -1,0 +1,50 @@
+import { ArgsTable, Preview, Story } from '@storybook/addon-docs';
+import { EditIcon, WalletIcon } from '.';
+
+<Meta
+  title="Media and Icons/Icons/Overview"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: {
+        hidden: true,
+      },
+    },
+  }}
+/>
+
+# Icons
+
+We have a collection of react components that export an `svg` icon. By default, they are `24px*24px` and have `role="img"` attribute. The component accepts all props that you would expect from an svg, including `ref`.
+
+## Import
+
+```tsx
+import { EditIcon, WalletIcon } from 'components/icons';
+```
+
+## Usage
+
+Below is a list of all of the icons in the library, along with the corresponding component names:
+
+<Preview withSource="none">
+  <Story id="media-and-icons-icons--visual-guide" />
+</Preview>
+
+```tsx
+<EditIcon />
+```
+
+### Customizing an Icon
+
+Use our token classes for `color`, `width`, `height`, etc.
+
+<Preview withSource="none">
+  <EditIcon className="text-primary w-16 h-16 hover:text-success" />
+  <WalletIcon className="text-secondary w-8 h-8 cursor-not-allowed" />
+</Preview>
+
+```tsx
+<EditIcon className="text-primary w-16 h-16 hover:text-success" />
+<WalletIcon className="text-secondary w-8 h-8 cursor-not-allowed" />
+```

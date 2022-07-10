@@ -1,0 +1,71 @@
+import { ArgsTable, Preview, Story } from '@storybook/addon-docs';
+
+import { Button } from '.';
+
+<Meta
+  title="Forms/Button/Overview"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: {
+        hidden: true,
+      },
+    },
+  }}
+/>
+
+# Button
+
+The Button component is used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.
+
+## Import
+
+```tsx
+import { Button } from 'components/ui';
+```
+
+## Usage
+
+<Preview withSource="none">
+  <Story id="forms-button--playground" />
+</Preview>
+
+```tsx
+<Button>Foo</Button>
+```
+
+### Button variants
+
+Use the `variant` prop to change the visual style of the Button. You can set the value to `primary` or `secondary`.
+
+<Preview withSource="none">
+  <Button variant="primary">Foo</Button>
+  <Button variant="secondary">Foo</Button>
+</Preview>
+
+```tsx
+<Button variant="primary">Foo</Button>
+<Button variant="secondary">Foo</Button>
+```
+
+### Button loading state
+
+Pass the `isLoading` prop to show its loading state. By default, the button will show a spinner and leave the button's width unchanged.
+
+<Preview withSource="none">
+  <Button isLoading>Foo</Button>
+</Preview>
+
+```tsx
+<Button isLoading>Foo</Button>
+```
+
+### Visual Guide
+
+<Preview withSource="none">
+  <Story id="forms-button--visual-guide" />
+</Preview>
+
+## Props
+
+<ArgsTable of={Button} />

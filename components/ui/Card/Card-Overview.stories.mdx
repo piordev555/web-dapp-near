@@ -1,0 +1,51 @@
+import { Preview, Story } from '@storybook/addon-docs';
+
+import { Card } from '.';
+
+<Meta
+  title="Layout/Card/Overview"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: {
+        hidden: true,
+      },
+    },
+  }}
+/>
+
+# Card
+
+Cards are surfaces that display content and actions on a single topic.  
+They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+
+## Import
+
+```tsx
+import { Card } from 'components/ui';
+```
+
+## Usage
+
+<Preview withSource="none">
+  <Story id="layout-card--visual-guide" />
+</Preview>
+
+```tsx
+<Card>...</Card>
+```
+
+Cards don't have a default padding, however, they have a border-radius of 1.5rem (24px), which is why you should usually add padding of at least 1.5rem (`p-6`) to either the Card or the content so it won't look weird.  
+For example:
+
+```tsx
+<Card className="p-6">...</Card>
+```
+
+or
+
+```tsx
+<Card>
+  <p className="p-6">...</p>
+</Card>
+```
