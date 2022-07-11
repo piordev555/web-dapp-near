@@ -99,7 +99,10 @@ export function ProfileForm() {
           />
         </div>
       </div>
-      <button type="submit" className="bg-primary hover:bg-darkGrey text-white w-72 sm:w-80 mt-10 py-4 rounded-lg">
+      <button
+        type="submit"
+        className="bg-primary hover:bg-secondary text- text-white w-72 sm:w-80 mt-10 py-4 rounded-lg transition-all  delay-300"
+      >
         Finish
       </button>
     </form>
