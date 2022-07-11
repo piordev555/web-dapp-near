@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { COUNTRIES } from './selector/countries';
 import { CountrySelector } from './selector/selector';
+import { FileInputPreview } from './fileInput/fileInput';
 
 import { loginAsync } from './authSlice';
 
@@ -30,7 +31,10 @@ export function ProfileForm() {
   return (
     <form className="mt-8 flex flex-col items-center" onSubmit={onSubmit}>
       <input type="hidden" name="remember" value="true" />
-      <div className="-space-y-px w-80 rounded-md shadow-sm flex flex-col gap-4">
+      <div>
+        <FileInputPreview />
+      </div>
+      <div className="-space-y-px w-72 sm:w-80 rounded-md shadow-sm flex flex-col gap-4">
         <div>
           <label htmlFor="first-name" className="sr-only">
             First name
@@ -41,7 +45,7 @@ export function ProfileForm() {
             type="firstname"
             autoComplete="firstname"
             required
-            className="w-full px-5 py-3 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="First name"
           />
         </div>
@@ -55,7 +59,7 @@ export function ProfileForm() {
             type="lastname"
             autoComplete="lastname"
             required
-            className="w-full px-5 py-3 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Last name"
           />
         </div>
@@ -69,7 +73,7 @@ export function ProfileForm() {
             type="email"
             autoComplete="email"
             required
-            className="w-full px-5 py-3 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Email address"
           />
         </div>
@@ -90,12 +94,12 @@ export function ProfileForm() {
             name="address"
             type="address"
             required
-            className="w-full px-5 py-3 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Address"
           />
         </div>
       </div>
-      <button type="submit" className="bg-primary hover:bg-darkGrey text-white w-80 mt-10 py-3 rounded-lg">
+      <button type="submit" className="bg-primary hover:bg-darkGrey text-white w-72 sm:w-80 mt-10 py-4 rounded-lg">
         Finish
       </button>
     </form>

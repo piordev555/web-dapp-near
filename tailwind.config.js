@@ -5,8 +5,18 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './stories/**/*.{js,ts,jsx,tsx}'],
   theme: {
     ...theme,
-    extend: {},
+    extend: {
+      width: {
+        80: '360px',
+        22: '90px',
+        70: '80vw',
+      },
+      height: {
+        22: '90px',
+      },
+    },
   },
+  important: true,
   variants: {
     extend: {
       backgroundColor: ['active', 'disabled'],

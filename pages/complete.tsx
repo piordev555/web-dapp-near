@@ -11,7 +11,9 @@ export default function CompleteProfile() {
         <div className="w-full max-w-md space-y-8">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <h2 className="mt-6 text-3xl font-extrabold text-heading-xl text-center text-gray-900">COMPLETE PROFILE</h2>
+            <h2 className="mt-6 text-2xl sm:text-3xl font-extrabold text-heading-xl text-center text-gray-900">
+              COMPLETE PROFILE
+            </h2>
             <p className="mt-2 text-sm text-center text-gray-600">lease fill in your details</p>
           </div>
           <ProfileForm />

@@ -39,6 +39,23 @@ const lineHeight = {
   '3xl': '4rem',
 };
 
+const screens = {
+  sm: '365px',
+  // => @media (min-width: 640px) { ... }
+
+  xs: '560px',
+  // => @media (min-width: 560px) { ... }
+
+  md: '750px',
+  // => @media (min-width: 640px) { ... }
+
+  lg: '1024px',
+  // => @media (min-width: 1024px) { ... }
+
+  xl: '1280px',
+  // => @media (min-width: 1280px) { ... }
+};
+
 const boxShadow = {
   DEFAULT: '0 0 4.375rem 0 rgba(48,43,140, 0.36)',
   button: '0 0 2rem 0 rgba(119, 113, 247, 0.38)',
@@ -52,4 +69,5 @@ module.exports = {
   fontSize,
   lineHeight,
   boxShadow,
+  screens,
 };

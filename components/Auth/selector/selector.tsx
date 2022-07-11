@@ -36,7 +36,7 @@ export const CountrySelector = React.forwardRef<
       <div className="mt-1 relative">
         <button
           type="button"
-          className="bg-white relative w-full border border-darkGrey rounded-lg shadow-sm pl-3 pr-10 py-3 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          className="bg-white relative w-full border border-darkGrey rounded-lg shadow-sm pl-3 pr-10 py-3.5 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           aria-haspopup="listbox"
           aria-expanded="true"
           aria-labelledby="listbox-label"
