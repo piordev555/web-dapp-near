@@ -7,7 +7,7 @@ import { LogoutIcon, NearIcon, SettingsIcon, DashboardIcon, ArtIcon, LogoIcon, M
 import { CONTRACT_NAME } from '../config/near';
 
 export default function Navbar(props) {
-  const { walletConnection, user } = props;
+  const { walletConnection } = props;
 
   return (
     <nav className="navbar border-b-2 border-lightGrey px-4 py-3 sm:px-6 xs:px-12 flex flex-row  justify-between">

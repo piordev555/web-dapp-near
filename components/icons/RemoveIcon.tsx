@@ -13,8 +13,8 @@ export const RemoveIcon = React.forwardRef<SVGSVGElement, React.ComponentPropsWi
       {...props}
     >
       <circle cx="12" cy="12" r="11.5" fill="white" stroke="#E9E9E9" />
-      <path d="M16 8L8 16" stroke="#F771A1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M8 8L16 16" stroke="#F771A1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M16 8L8 16" stroke="#F771A1" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8 8L16 16" stroke="#F771A1" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 });
