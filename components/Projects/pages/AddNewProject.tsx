@@ -1,11 +1,16 @@
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { FileInputPreview } from '../../Auth/fileInput/fileInput';
 import { Input } from '../../items/elements';
 
+interface Project {
+  name: string;
+  description: string;
+  image: string;
+}
+
 interface Props {
-  onAdded: (project) => void;
+  onAdded: (project: Project) => void;
 }
 
 export const AddNewProject: React.FC<Props> = ({ onAdded }) => {
@@ -13,7 +18,7 @@ export const AddNewProject: React.FC<Props> = ({ onAdded }) => {
   const [subTitle, setSubTitle] = useState('');
   const [image, setImage] = useState('');
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onAdded({
       name: projectName,

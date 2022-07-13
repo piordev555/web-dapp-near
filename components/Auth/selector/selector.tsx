@@ -1,9 +1,10 @@
 import React, { MutableRefObject, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+
 import { COUNTRIES } from './countries';
 import { SelectMenuOption } from './types';
 
-export const CountrySelector = React.forwardRef<
+export const CountrySelector: React.forwardRef<
   HTMLDivElement,
   {
     id: string;
@@ -12,7 +13,7 @@ export const CountrySelector = React.forwardRef<
     onChange: (value: any) => void;
     selectedValue: SelectMenuOption;
   }
->((props, ref) => {
+> = (props, ref) => {
   useEffect(() => {
     const mutableRef = ref as MutableRefObject<HTMLDivElement | null>;
 
@@ -24,6 +25,7 @@ export const CountrySelector = React.forwardRef<
     };
 
     document.addEventListener('mousedown', handleClickOutside);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -155,4 +157,4 @@ export const CountrySelector = React.forwardRef<
       </div>
     </div>
   );
-});
+};

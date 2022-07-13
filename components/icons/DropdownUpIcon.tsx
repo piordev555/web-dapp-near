@@ -12,7 +12,7 @@ export const DropdownUpIcon = React.forwardRef<SVGSVGElement, React.ComponentPro
       ref={ref}
       {...props}
     >
-      <path d="M7 3.5L4 0.5L1 3.5" stroke="#7871FF" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M7 3.5L4 0.5L1 3.5" stroke="#7871FF" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 });

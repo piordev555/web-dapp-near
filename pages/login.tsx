@@ -4,7 +4,6 @@ import Metatags from '../components/Metatags';
 import { LoginForm } from '../components/Auth/LoginForm';
 
 export default function Enter() {
-
   return (
     <main>
       <Metatags title="Enter" description="Sign up for this amazing app!" />

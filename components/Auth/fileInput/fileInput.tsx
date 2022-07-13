@@ -1,10 +1,9 @@
-import * as React from 'react';
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { RemoveIcon } from 'components/icons';
 
 interface Props {
-  imageChanged?: (image) => void;
+  imageChanged?: (image: string) => void;
 }
 
 export const FileInputPreview: React.FC<Props> = ({ imageChanged }) => {
@@ -17,6 +16,7 @@ export const FileInputPreview: React.FC<Props> = ({ imageChanged }) => {
   const ImageChanged = (e) => {
     e.preventDefault();
     const files = imageInputRef.current.files[0];
+
     if (files) {
       const fileReader = new FileReader();
 
@@ -24,6 +24,7 @@ export const FileInputPreview: React.FC<Props> = ({ imageChanged }) => {
 
       fileReader.addEventListener('load', function () {
         const background = this.result;
+
         setFile(background);
         setSelected(true);
       });

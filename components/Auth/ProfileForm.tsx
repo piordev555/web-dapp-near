@@ -1,11 +1,10 @@
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+import { Input } from 'components/items/elements';
 
 import { COUNTRIES } from './selector/countries';
 import { CountrySelector } from './selector/selector';
 import { FileInputPreview } from './fileInput/fileInput';
-import { Input } from 'components/items/elements';
-
 import { loginAsync } from './authSlice';
 
 import { useAppDispatch } from '../../lib/hooks';
@@ -50,7 +49,7 @@ export function ProfileForm() {
           ref={countryRef}
           open={isOpen}
           onToggle={() => setIsOpen(!isOpen)}
-          onChange={(val) => setCountry(val)}
+          onChange={(val: string) => setCountry(val)}
           selectedValue={COUNTRIES.find((option) => option.value === country) as SelectMenuOption}
         />
         <Input label="Address" value={address} onChange={(address) => setAddress(address)} />

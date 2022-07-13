@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+import { AddNewProject, MyProjects } from 'components/Projects';
 
 import Metatags from '../components/Metatags';
-import { AddNewProject, MyProjects } from 'components/Projects';
 
 interface Project {
   name: string;
@@ -19,7 +19,7 @@ export default function Projects() {
   const [status, setStatus] = useState(allStatus.explorer);
   const [projects, setProjects] = useState<Project[]>([]);
 
-  const addProject = (project) => {
+  const addProject = (project: Project) => {
     setProjects([...projects, project]);
     setStatus(allStatus.explorer);
   };

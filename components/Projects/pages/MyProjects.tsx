@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { AddProject, ProjectCard, ProjectFilter } from '../../items';
 
 interface Project {
@@ -26,7 +27,7 @@ export const MyProjects: React.FC<Props> = ({ onAdd, projects }) => {
           <div className="flex justify-center flex-wrap gap-6">
             <AddProject onAdd={() => onAdd()} />
             {projects.map((project) => {
-              return <ProjectCard project={project} />;
+              return <ProjectCard key={project.name} project={project} />;
             })}
           </div>
         </div>

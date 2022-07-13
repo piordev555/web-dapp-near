@@ -2,10 +2,12 @@ import * as React from 'react';
 import Router from 'next/router';
 import PropTypes from 'prop-types';
 import { WalletConnection } from 'near-api-js';
+
+import { PUBLIC_URL } from 'config/config';
+
 import { LogoutIcon, NearIcon, SettingsIcon, DashboardIcon, ArtIcon, LogoIcon, MenuBarIcon } from './icons';
 
 import { CONTRACT_NAME } from '../config/near';
-import { PUBLIC_URL } from 'config/config';
 
 export default function Navbar(props) {
   const { walletConnection } = props;

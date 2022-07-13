@@ -12,7 +12,7 @@ export const DropdownDownIcon = React.forwardRef<SVGSVGElement, React.ComponentP
       ref={ref}
       {...props}
     >
-      <path d="M1 0.5L4 3.5L7 0.5" stroke="#8383A5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M1 0.5L4 3.5L7 0.5" stroke="#8383A5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 });
