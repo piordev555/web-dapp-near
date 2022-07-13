@@ -42,7 +42,7 @@ export function ProfileForm() {
           <input
             id="first-name"
             name="firstname"
-            type="firstname"
+            type="text"
             autoComplete="firstname"
             required
             className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -56,7 +56,7 @@ export function ProfileForm() {
           <input
             id="last-name"
             name="lastname"
-            type="lastname"
+            type="text"
             autoComplete="lastname"
             required
             className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -92,7 +92,7 @@ export function ProfileForm() {
           <input
             id="address"
             name="address"
-            type="address"
+            type="text"
             required
             className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Address"

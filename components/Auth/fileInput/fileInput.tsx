@@ -3,7 +3,11 @@ import { useState, useRef, useEffect } from 'react';
 
 import { RemoveIcon } from 'components/icons';
 
-export function FileInputPreview() {
+interface Props {
+  imageChanged?: (image) => void;
+}
+
+export const FileInputPreview: React.FC<Props> = ({ imageChanged }) => {
   const defaultImage = '/user.png';
   const previewRef = useRef(null);
   const imageInputRef = useRef(null);
@@ -32,6 +36,7 @@ export function FileInputPreview() {
   };
 
   useEffect(() => {
+    imageChanged && imageChanged(file);
     previewRef.current.style.backgroundImage = `url(` + file + `)`;
   }, [file]);
 
@@ -56,10 +61,8 @@ export function FileInputPreview() {
           ref={previewRef}
           className="w-22 h-22 rounded-full border-2 border-lightGrey bg-white bg-cover bg-no-repeat bg-center transition-all ease-in-out delay-500"
         ></div>
-        <div className="mt-1 mb-6 text-primary text-sm cursor-pointer" onClick={() => setSelected(true)}>
-          {isSelected ? 'Change' : 'Add photo'}
-        </div>
+        <div className="mt-1 mb-6 text-primary text-sm cursor-pointer">{isSelected ? 'Change' : 'Add photo'}</div>
       </label>
     </div>
   );
-}
+};

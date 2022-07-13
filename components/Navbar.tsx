@@ -5,6 +5,7 @@ import { WalletConnection } from 'near-api-js';
 import { LogoutIcon, NearIcon, SettingsIcon, DashboardIcon, ArtIcon, LogoIcon, MenuBarIcon } from './icons';
 
 import { CONTRACT_NAME } from '../config/near';
+import { PUBLIC_URL } from 'config/config';
 
 export default function Navbar(props) {
   const { walletConnection } = props;
@@ -34,13 +35,51 @@ export default function Navbar(props) {
         ) : (
           <div className="flex items-center flex-row-reverse md:justify-between md:flex-row md:w-70">
             <div className="hidden items-center gap-3 md:flex">
-              <div className="group flex gap-2 cursor-pointer hover:bg-primary rounded-2xl px-4 py-2">
-                <DashboardIcon className="group-hover:text-white" />
-                <p className="text-black group-hover:text-white">Dashboard</p>
+              <div
+                className={
+                  (Router.pathname == PUBLIC_URL.dashboard ? 'bg-primary ' : 'bg-white ') +
+                  'group flex gap-2 cursor-pointer hover:bg-primary rounded-2xl px-4 py-2'
+                }
+                onClick={() => {
+                  Router.push(PUBLIC_URL.dashboard);
+                }}
+              >
+                <DashboardIcon
+                  className={
+                    (Router.pathname == PUBLIC_URL.dashboard ? 'text-white ' : 'text-black ') +
+                    ' group-hover:text-white'
+                  }
+                />
+                <p
+                  className={
+                    (Router.pathname == PUBLIC_URL.dashboard ? 'text-white ' : 'text-black ') +
+                    ' group-hover:text-white'
+                  }
+                >
+                  Dashboard
+                </p>
               </div>
-              <div className="group flex gap-2 cursor-pointer hover:bg-primary rounded-2xl px-4 py-2">
-                <ArtIcon className="group-hover:text-white" />
-                <p className="text-black group-hover:text-white">My projects</p>
+              <div
+                className={
+                  (Router.pathname == PUBLIC_URL.projects ? 'bg-primary ' : 'bg-white ') +
+                  'group flex gap-2 cursor-pointer hover:bg-primary rounded-2xl px-4 py-2'
+                }
+                onClick={() => {
+                  Router.push(PUBLIC_URL.projects);
+                }}
+              >
+                <ArtIcon
+                  className={
+                    (Router.pathname == PUBLIC_URL.projects ? 'text-white ' : 'text-black ') + ' group-hover:text-white'
+                  }
+                />
+                <p
+                  className={
+                    (Router.pathname == PUBLIC_URL.projects ? 'text-white ' : 'text-black ') + ' group-hover:text-white'
+                  }
+                >
+                  My Projects
+                </p>
               </div>
             </div>
             <div className="flex gap-3 sm:gap-1 xs:gap-3 items-center">

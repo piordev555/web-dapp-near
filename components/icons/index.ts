@@ -6,6 +6,8 @@ export * from './CloseIcon';
 export * from './CollectionIcon';
 export * from './DashboardIcon';
 export * from './DeleteIcon';
+export * from './DropdownDownIcon';
+export * from './DropdownUpIcon';
 export * from './EditIcon';
 export * from './LogoIcon';
 export * from './LocationIcon';
