@@ -5,7 +5,7 @@ import type { Contract, WalletConnection } from 'near-api-js';
 import { useState, useEffect } from 'react';
 
 // tailwind
-import 'tailwindcss/tailwind.css';
+import '../styles/index.css';
 
 // fonts
 import '@fontsource/anton/latin.css';

@@ -4,13 +4,13 @@ const theme = require('./theme');
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './stories/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    ...theme,
     extend: {
+      ...theme,
       width: {
         22: '90px',
         64: '264px',
         70: '80vw',
-        72: '72px',
+        '72p': '72px',
         80: '360px',
         312: '312px',
         308: '308px',

@@ -23,7 +23,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
   return (
     <div className="border border-lightGrey w-312 sm:w-308 md:w-64 h-80 rounded-3xl bg-white flex flex-col items-center ">
       <div className="flex flex-col items-center justify-between w-full h-210 py-6">
-        <div className="w-72 h-72 bg-primary rounded-full bg-cover bg-no-repeat bg-center" ref={avatarRef}></div>
+        <div className="w-72p h-72 bg-primary rounded-full bg-cover bg-no-repeat bg-center" ref={avatarRef}></div>
         <div className="flex flex-col items-center">
           <p className="text-heading-md uppercase">{project.name}</p>
           <p className="font-normal text-body-sm text-darkGrey">{project.description}</p>

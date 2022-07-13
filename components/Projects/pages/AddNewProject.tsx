@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 
 import { FileInputPreview } from '../../Auth/fileInput/fileInput';
+import { Input } from '../../items/elements';
 
 interface Props {
   onAdded: (project) => void;
@@ -33,42 +34,8 @@ export const AddNewProject: React.FC<Props> = ({ onAdded }) => {
             <FileInputPreview imageChanged={(img) => setImage(img)} />
           </div>
           <div className="-space-y-px w-72 sm:w-80 rounded-md shadow-sm flex flex-col gap-4">
-            <div>
-              <label htmlFor="project-name" className="sr-only">
-                Project name
-              </label>
-              <input
-                id="project-name"
-                name="projectname"
-                type="text"
-                autoComplete="projectname"
-                required
-                className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Project name"
-                value={projectName}
-                onChange={(e) => {
-                  setProjectName(e.target.value);
-                }}
-              />
-            </div>
-            <div>
-              <label htmlFor="subtitle" className="sr-only">
-                Subtitle
-              </label>
-              <input
-                id="subtitle"
-                name="subtitle"
-                type="text"
-                autoComplete="subtitle"
-                required
-                className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Subtitle"
-                value={subTitle}
-                onChange={(e) => {
-                  setSubTitle(e.target.value);
-                }}
-              />
-            </div>
+            <Input label="Project name" value={projectName} onChange={(name) => setProjectName(name)} />
+            <Input label="Subtitle" value={subTitle} onChange={(title) => setSubTitle(title)} />
           </div>
           <button
             type="submit"

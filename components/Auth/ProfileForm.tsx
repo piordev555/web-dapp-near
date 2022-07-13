@@ -1,8 +1,10 @@
 import * as React from 'react';
+import { useState } from 'react';
 
 import { COUNTRIES } from './selector/countries';
 import { CountrySelector } from './selector/selector';
 import { FileInputPreview } from './fileInput/fileInput';
+import { Input } from 'components/items/elements';
 
 import { loginAsync } from './authSlice';
 
@@ -12,8 +14,13 @@ export function ProfileForm() {
   const dispatch = useAppDispatch();
   const countryRef = React.createRef<HTMLDivElement>();
 
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [country, setCountry] = React.useState('GB');
+  const [isOpen, setIsOpen] = useState(false);
+  const [country, setCountry] = useState('GB');
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [address, setAddress] = useState('');
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -35,48 +42,9 @@ export function ProfileForm() {
         <FileInputPreview />
       </div>
       <div className="-space-y-px w-72 sm:w-80 rounded-md shadow-sm flex flex-col gap-4">
-        <div>
-          <label htmlFor="first-name" className="sr-only">
-            First name
-          </label>
-          <input
-            id="first-name"
-            name="firstname"
-            type="text"
-            autoComplete="firstname"
-            required
-            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="First name"
-          />
-        </div>
-        <div>
-          <label htmlFor="last-name" className="sr-only">
-            Last name
-          </label>
-          <input
-            id="last-name"
-            name="lastname"
-            type="text"
-            autoComplete="lastname"
-            required
-            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="Last name"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="sr-only">
-            Email address
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="Email address"
-          />
-        </div>
+        <Input label="First name" value={firstName} onChange={(fname) => setFirstName(fname)} />
+        <Input label="Last name" value={lastName} onChange={(lname) => setLastName(lname)} />
+        <Input label="Email address" value={emailAddress} type="email" onChange={(email) => setEmailAddress(email)} />
         <CountrySelector
           id={'countries'}
           ref={countryRef}
@@ -85,19 +53,7 @@ export function ProfileForm() {
           onChange={(val) => setCountry(val)}
           selectedValue={COUNTRIES.find((option) => option.value === country) as SelectMenuOption}
         />
-        <div>
-          <label htmlFor="address" className="sr-only">
-            Address
-          </label>
-          <input
-            id="address"
-            name="address"
-            type="text"
-            required
-            className="w-full px-5 py-4 text-body-md placeholder-gray-500 border border-darkGrey rounded-lg appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="Address"
-          />
-        </div>
+        <Input label="Address" value={address} onChange={(address) => setAddress(address)} />
       </div>
       <button
         type="submit"
