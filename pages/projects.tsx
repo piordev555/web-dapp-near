@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { AddNewProject, MyProjects } from 'components/Projects';
+import type { AppState } from 'lib/store';
 
+import { createProjectAsync, getProjectsAsync } from '../components/Projects/projectSlice';
+import { useAppDispatch, useAppSelector } from '../lib/hooks';
+import type { Project } from '../components/Projects/projectSlice';
+import { addProjectAction } from '../components/Projects/projectSlice';
 import Metatags from '../components/Metatags';
 
-interface Project {
-  name: string;
-  description: string;
-  image: string;
-}
-
 export default function Projects() {
+  const dispatch = useAppDispatch();
+
   const allStatus = {
     explorer: 'explorer',
     add: 'add',
   };
 
+  const projs = useAppSelector((state: AppState) => state.projects);
+
   const [status, setStatus] = useState(allStatus.explorer);
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<Project[]>(projs.projects?.data == undefined ? [] : projs.projects?.data);
+
+  useEffect(() => {
+    dispatch(getProjectsAsync());
+  }, []);
+
+  useEffect(() => {
+    setProjects(projs.projects?.data == undefined ? [] : projs.projects?.data);
+  }, [projs]);
 
   const addProject = (project: Project) => {
-    setProjects([...projects, project]);
+    dispatch(createProjectAsync(project));
+    dispatch(addProjectAction([...projects, project]));
     setStatus(allStatus.explorer);
   };
 

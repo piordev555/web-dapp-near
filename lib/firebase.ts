@@ -59,7 +59,7 @@ function connectLocalEmulator(env: string) {
   }
 }
 
-connectLocalEmulator(process.env.NODE_ENV);
+//connectLocalEmulator(process.env.NODE_ENV);
 
 /**`
  * Gets a users/{uid} document with username

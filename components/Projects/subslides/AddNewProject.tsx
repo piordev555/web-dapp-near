@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 
 import { FileInputPreview } from '../../Auth/fileInput/fileInput';
 import { Input } from '../../items/elements';
-
-interface Project {
-  name: string;
-  description: string;
-  image: string;
-}
+import type { Project } from '../projectSlice';
 
 interface Props {
   onAdded: (project: Project) => void;

@@ -11,7 +11,6 @@ interface Props {
 }
 
 export const ProjectCard: React.FC<Props> = ({ project }) => {
-  console.log(project);
   const url = project.image;
   const avatarRef = useRef(null);
 

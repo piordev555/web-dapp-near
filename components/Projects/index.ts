@@ -1,2 +1,2 @@
-export * from './pages/AddNewProject';
-export * from './pages/MyProjects';
+export * from './subslides/AddNewProject';
+export * from './subslides/MyProjects';

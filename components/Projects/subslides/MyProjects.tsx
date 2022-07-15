@@ -1,12 +1,7 @@
 import * as React from 'react';
 
 import { AddProject, ProjectCard, ProjectFilter } from '../../items';
-
-interface Project {
-  name: string;
-  description: string;
-  image: string;
-}
+import type { Project } from '../projectSlice';
 
 interface Props {
   projects: Project[];
