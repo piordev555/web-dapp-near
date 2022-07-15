@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { AddNewProject, MyProjects } from 'components/Projects';
 import type { AppState } from 'lib/store';
 
-import { createProjectAsync, getProjectsAsync } from '../components/Projects/projectSlice';
+import { createProjectAsync, projectsAsync } from '../components/Projects/projectSlice';
 import { useAppDispatch, useAppSelector } from '../lib/hooks';
 import type { Project } from '../components/Projects/projectSlice';
 import { addProjectAction } from '../components/Projects/projectSlice';
@@ -23,7 +23,7 @@ export default function Projects() {
   const [projects, setProjects] = useState<Project[]>(projs.projects?.data == undefined ? [] : projs.projects?.data);
 
   useEffect(() => {
-    dispatch(getProjectsAsync());
+    dispatch(projectsAsync());
   }, []);
 
   useEffect(() => {

@@ -49,10 +49,10 @@ export const postRequest = async (url: string, body: any) => {
   return data;
 };
 
-const getProjects = httpsCallable(functions, 'api/projects');
-
 export const projectsAsync = createAsyncThunk('projects/get', async () => {
-  const response = await getProjects();
+  const response = await postRequest(`${process.env.NEXT_PUBLIC_API_URL}/projects`, {
+    userUID: 'bacis.testnet',
+  });
 
   return response;
 });
@@ -91,7 +91,8 @@ export const projectSlice = createSlice({
       })
       .addCase(projectsAsync.fulfilled, (state, action) => {
         state.status = 'done';
-        state.value = action.payload as any;
+        // state.value = action.payload as any;
+        state.projects = action.payload as any;
       })
       .addCase(createProjectAsync.pending, (state) => {
         state.status = 'loading';
@@ -99,13 +100,6 @@ export const projectSlice = createSlice({
       .addCase(createProjectAsync.fulfilled, (state, action) => {
         state.status = 'done';
         state.value = action.payload as any;
-      })
-      .addCase(getProjectsAsync.pending, (state) => {
-        state.projectStatus = 'loading';
-      })
-      .addCase(getProjectsAsync.fulfilled, (state, action) => {
-        state.projectStatus = 'done';
-        state.projects = action.payload as any;
       });
   },
 });
