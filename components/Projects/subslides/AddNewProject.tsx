@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import { FileInputPreview } from '../../Auth/fileInput/fileInput';
 import { Input } from '../../items/elements';
 import type { Project } from '../projectSlice';
+import { BackIcon } from '../../icons';
 
 interface Props {
   onAdded: (project: Project) => void;
+  onBack: () => void;
 }
 
-export const AddNewProject: React.FC<Props> = ({ onAdded }) => {
+export const AddNewProject: React.FC<Props> = ({ onAdded, onBack }) => {
   const [projectName, setProjectName] = useState('');
   const [subTitle, setSubTitle] = useState('');
   const [image, setImage] = useState('');
@@ -24,7 +26,13 @@ export const AddNewProject: React.FC<Props> = ({ onAdded }) => {
 
   return (
     <div className="w-full max-w-md space-y-8">
-      <div>
+      <div className="">
+        <div
+          className="absolute invisible xs:visible sm:left-14 md:left-40 w-14 h-14 rounded-full bg-white shadow-2xl flex items-center justify-center cursor-pointer"
+          onClick={() => onBack()}
+        >
+          <BackIcon className="text-darkGrey" />
+        </div>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-heading-xl text-center text-gray-900">
           ADD NEW PROJECT
         </h2>

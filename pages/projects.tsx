@@ -41,7 +41,9 @@ export default function Projects() {
       <Metatags title="Projects" description="Explore my projects" />
       <div className="flex items-center justify-center min-h-full px-4 py-12 sm:px-6 lg:px-8">
         {status == allStatus.explorer && <MyProjects projects={projects} onAdd={() => setStatus(allStatus.add)} />}
-        {status == allStatus.add && <AddNewProject onAdded={(project) => addProject(project)} />}
+        {status == allStatus.add && (
+          <AddNewProject onAdded={(project) => addProject(project)} onBack={() => setStatus('explorer')} />
+        )}
       </div>
     </main>
   );
